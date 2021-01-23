@@ -4,6 +4,8 @@ div {
 
 #roulette {
     margin: 60px;
+    transform: rotate(30deg);
+    transition:all 1.5s;
 }
 
 #roll {
