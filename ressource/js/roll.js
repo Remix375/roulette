@@ -48,7 +48,7 @@ const changeBetAmount = () => {
 }
 
 
-const rollLogic = (betAmount) => {
+const rollLogic = () => {
 
     canTurn = false
     let numberCase = randomCase();
