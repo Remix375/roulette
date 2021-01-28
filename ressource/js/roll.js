@@ -1,7 +1,7 @@
 let rollButton = document.getElementById('roll');
 let roulette = document.getElementById('roue');
-let balanceElement = document.getElementById('balance')
-
+let balanceElement = document.getElementById('balance');
+let betAmountInput = document.getElementById('betAmount');
 
 
 //angle of the wheel and balance of user
@@ -11,7 +11,7 @@ let balance = 1000;
 
 //user choices
 let chosenColor = 'red';
-let betAmount = 10;
+let betAmount;
 
 
 //forbid wheel to turn if it is turning
@@ -39,11 +39,12 @@ const getColor = (numberCase) => {
 
 //a changer
 const setChosenColor = (color) => {
+    console.log(color)
     chosenColor = color
 }
 
 const changeBetAmount = () => {
-    betAmount = parseInt(document.getElementById('betAmount').value);
+    betAmount = parseInt(betAmountInput.value);
     console.log(betAmount)
 }
 
@@ -82,7 +83,7 @@ const afterSpin = (color) => {
 
 
 const roll = () => {
-    if (!canTurn || !betAmount || !chosenColor) {
+    if (!canTurn || !betAmount || !chosenColor || betAmount>balance) {
         return
     }
     let color = rollLogic()
@@ -90,3 +91,17 @@ const roll = () => {
 }
 
 rollButton.onclick = roll;
+
+
+document.getElementById('redButton').onclick = () => {
+    chosenColor='red';
+    betAmountInput.style.backgroundColor = 'red'
+}
+document.getElementById('blackButton').onclick = () => {
+    chosenColor='black';
+    betAmountInput.style.backgroundColor = 'black'
+}
+document.getElementById('greenButton').onclick = () => {
+    chosenColor='green';
+    betAmountInput.style.backgroundColor = 'green'
+}
