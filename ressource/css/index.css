@@ -58,9 +58,6 @@ body {
 	top:1px;
 }
 
-#balanc {
-    text-align: right;
-}
 
 #balance {
     text-align: center;
@@ -71,4 +68,32 @@ body {
     display: inline-block;
     background-color: black;
     color: white
+}
+
+#betAmount {
+    font-size:16px; 
+    border-width:2px; 
+    border-color:#cccccc; 
+    background-color:#ffffff; 
+    border-style:ridge; 
+    box-shadow: 4px 5px 5px 0px rgba(42,42,42,.74); 
+    padding:15px; 
+    text-align:center;  } 
+		 
+}
+
+#betAmount:focus { 
+    outline:none; 
+} 
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
