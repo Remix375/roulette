@@ -1,160 +1,31 @@
+button {
+    height:100px;
+    width: 300px;
+    margin: 30px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+a {
+    text-align: center;
+}
+
+img {
+    height: 70px;
+}
+
 body {
+    text-align: center;
     background-color: bisque;
 }
 
-
-.center {
-    text-align: center;
-    margin-top: 40px;
+#lienVersChaine {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 35px;
 }
 
-#fleche {
-    height: 10px;
-    position: absolute;
-    top: 43.2%;
-    z-index: 5;
-}
-
-
-#roulette {
-    margin: 60px 0px;
-    display: inline;
-}
-
-#roue {
-    transition:all 2s;
-    transform: rotate(0deg);
-}
-
-#roll {
-    font-size: 40px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 70px;
-    width: 120px;
-    margin-top: 30px;
-    cursor: pointer;
-    box-shadow:inset 0px 1px 0px 0px #efdcfb;
-	background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
-	background-color:#dfbdfa;
-	border-radius:6px;
-	border:1px solid #c584f3;
-	display:inline-block;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #9752cc;
-}
-
-#roll:hover {
-    background:linear-gradient(to bottom, #bc80ea 5%, #dfbdfa 100%);
-	background-color:#bc80ea;
-}
-
-#roll:active {
-    position:relative;
-	top:1px;
-}
-
-
-#balance {
-    text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    height: 50px;
-    width: 300px;
-    border-radius: 10px;
-    display: inline-block;
-    background-color: black;
-    color: white
-}
-
-#betAmount {
-    font-size:16px; 
-    border-width:2px; 
-    border-color:black; 
-    background-color: red;
-    border-style:ridge; 
-    box-shadow: 4px 5px 5px 0px rgba(42,42,42,.74); 
-    padding:15px; 
-    text-align:center;
-    color: white;
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-#betAmount:focus { 
-    outline:none; 
-} 
-
-.colorButton {
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:11px 24px;
-	text-decoration:none;
-    text-shadow:0px 1px 0px #b23e35;
-    margin: 5px;
-}
-
-.colorButton:active {
-	position:relative;
-	top:1px;
-}
-
-#blackButton {
-    box-shadow:inset 0px 1px 0px 0px #414042;
-	background:linear-gradient(to bottom, #242424 5%, #0a0a0a 100%);
-	background-color:#0a0a0a;
-	border-radius:6px;
-	border:1px solid #121111;
-}
-#blackButton:hover {
-	background:linear-gradient(to bottom, #0a0a0a 5%, #242424 100%);
-	background-color:#0a0a0a;
-}
-
-
-#greenButton {
-    box-shadow:inset 0px 1px 0px 0px #a1f7af;
-	background:linear-gradient(to bottom, #3dff5d 5%, #12ff39 100%);
-	background-color:12ff39;
-	border-radius:6px;
-	border:1px solid #28d444;
-}
-#greenButton:hover {
-	background:linear-gradient(to bottom, #12ff39 5%, #3dff5d 100%);
-	background-color:#12ff39;
-}
-
-
-#redButton {
-    box-shadow:inset 0px 1px 0px 0px #f29c93;
-	background:linear-gradient(to bottom, #fe1a00 5%, #ce0100 100%);
-	background-color:#fe1a00;
-	border-radius:6px;
-	border:1px solid #d83526;
-}
-#redButton:hover {
-	background:linear-gradient(to bottom, #ce0100 5%, #fe1a00 100%);
-	background-color:#ce0100;
-}
-
-
-
-
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
+#divlienVersChaine {
+    margin-top: 20px;
 }

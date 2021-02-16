@@ -3,29 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='../ressource/css/index.css'>
+    <link rel='stylesheet' href='./ressource/css/index.css'>
     <title>Roulette</title>
 </head>
 <body>
     <div class='center'>
-        <h1 id='balance'>Balance: 1000</h1>
+        <h1 id='profit'>Profit: 0</h1>
+        <button id='resetProfit' onclick='resetProfit()' >reset</button>
     </div>
     
     
     <div class='center'>
         <div id='roulette'>
-            <img src="../ressource/image/fleche_test.png" id='fleche'/>
+            <img src="./ressource/image/fleche_test.png" id='fleche'/>
 
-            <img id='roue' src="../ressource/image/roulette2.png" alt='Roulette'/>
+            <img id='roue' src="./ressource/image/roulette2.png" alt='Roulette'/>
         </div>
 
         <div>
-            
             <button id ='roll'>Roll</button>
         </div>
     </div>
+
+
+    <div id="automaticRoll">
+        <h1>Automatic Roll</h1>
+        <div>
+            <h2>Mise initiale: </h2>
+            <input id='miseInitiale'>
+        </div>
+    </div>
+
+
     <div class='center'>
         <input type='number' id='betAmount' onchange="changeBetAmount()" >
+        <button class='colorButton' id='xtwo' onclick="timesTwoBetAmount()">x2</button>
         <div>
             <button id='redButton' class='colorButton'>Rouge</button>
             <button id='blackButton' class='colorButton'>Noir</button>
@@ -34,5 +46,6 @@
     </div>
 
 </body>
-<script src="../ressource/js/roll.js"></script>
+<script src="./ressource/js/roll.js"></script>
+<script src="ressource/js/draggable_element.js"></script>
 </html>
