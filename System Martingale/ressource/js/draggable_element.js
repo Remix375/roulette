@@ -1,9 +1,10 @@
 
 
 
-dragElement(document.getElementById("automaticRoll"));
+dragElement(document.getElementById("movable"), document.getElementById("automaticRoll"));
 
-function dragElement(elmnt) {
+
+function dragElement(elmnt, elmtToMove) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   if (document.getElementById(elmnt.id + "header")) {
     // if present, the header is where you move the DIV from:
@@ -33,8 +34,8 @@ function dragElement(elmnt) {
     pos3 = e.clientX;
     pos4 = e.clientY;
     // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    elmtToMove.style.top = (elmtToMove.offsetTop - pos2) + "px";
+    elmtToMove.style.left = (elmtToMove.offsetLeft - pos1) + "px";
   }
 
   function closeDragElement() {

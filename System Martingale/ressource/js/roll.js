@@ -106,6 +106,9 @@ const roll = () => {
 
 
 
+
+
+
 rollButton.onclick = roll;
 
 

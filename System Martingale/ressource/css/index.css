@@ -1,5 +1,6 @@
 body {
     background-color: bisque;
+    overflow: hidden;
 }
 
 
@@ -183,15 +184,45 @@ input[type=number] {
 
 #automaticRoll {
     position: absolute;
-    cursor:grabbing;
+    
     border: solid black;
-    border-radius: 20px;
+    border-radius: 10px;
     padding:20px;
     top: 20px;
     background-color: blanchedalmond;
+    z-index: 10;
+    padding: 10px;
+    text-align: center;
+}
+
+#movable {
+    cursor:grabbing;
+}
+
+#miseInitiale input{
+    width: 40px;
+}
+
+#miseInitiale h3 {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#automaticRoll h1 {
+    margin: 0;
+}
+
+#chosenColor .choose{
+    width: 100px;
+}
+
+#nbrtours input {
+    width: 95px;
+}
+
+#nbrtours h3 {
+    display: inline-block;
+    margin-right: 10px;
 }
 
 
-#miseInitiale {
-    width:5px;
-}
