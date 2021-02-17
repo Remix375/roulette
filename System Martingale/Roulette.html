@@ -33,7 +33,7 @@
         
         <div id='miseInitiale'>
             <h3>Mise initiale: </h3>
-            <input type="number"/>
+            <input type="number" id='miseInitialeValeur'/>
         </div>
 
         <div id='chosenColor'>
@@ -43,21 +43,21 @@
 
         <div id='nbrtours'>
             <h3>Tours: </h3>
-            <input type='number'/>
+            <input type='number' id='nbrtoursValeur'/>
         </div>
 
-        <button>GO</button>
+        <button id='goAuto'>GO</button>
 
     </div>
 
 
     <div class='center'>
-        <input type='number' id='betAmount' onchange="changeBetAmount()" >
-        <button class='colorButton' id='xtwo' onclick="timesTwoBetAmount()">x2</button>
+        <input type='number' id='betAmount' onchange="changeBetAmount(this.value)" >
+        <button class='colorButton' id='xtwo' onclick="timesTwoBetAmount(betAmount)">x2</button>
         <div>
-            <button id='redButton' class='colorButton'>Rouge</button>
-            <button id='blackButton' class='colorButton'>Noir</button>
-            <button id='greenButton' class='colorButton'>Vert</button>
+            <button id='redButton' class='colorButton' onclick="setChosenColor('red')">Rouge</button>
+            <button id='blackButton' class='colorButton' onclick="setChosenColor('black')">Noir</button>
+            <button id='greenButton' class='colorButton' onclick="setChosenColor('green')">Vert</button>
         </div>
     </div>
 

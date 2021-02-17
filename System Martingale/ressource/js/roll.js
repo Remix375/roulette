@@ -16,7 +16,11 @@ let betAmount;
 
 //forbid wheel to turn if it is turning
 let canTurn = true
+let spinTime=2000
 
+
+//result of wheel spin
+let result = ''
 
 //get random case 0-36
 const randomCase = () => {
@@ -38,17 +42,21 @@ const getColor = (numberCase) => {
 
 
 //change color and bet amount
+
 const setChosenColor = (color) => {
     chosenColor = color
+    betAmountInput.style.backgroundColor = color
 }
 
-const changeBetAmount = () => {
-    betAmount = parseInt(betAmountInput.value);
+
+const changeBetAmount = (newBetAmount) => {
+    betAmountInput.value = newBetAmount.toString()
+    betAmount = newBetAmount
 }
 
-const timesTwoBetAmount = () => {
-    betAmount *= 2
-    betAmountInput.value = betAmount
+const timesTwoBetAmount = (currentBetAmount) => {
+    newBetAmount = currentBetAmount * 2
+    changeBetAmount(newBetAmount)
 }
 
 const resetProfit = () => {
@@ -71,15 +79,17 @@ const rollLogic = () => {
 }
 
 
-const afterSpin = (color) => {
+const afterSpin = (color, bet) => {
     if (color !== chosenColor) {
-        profit -= betAmount
+        profit -= bet
+        result = 'loss'
     }else {
         if (color === 'green') {
-            profit += (betAmount * 11)
+            profit += (bet * 11)
         } else {
-            profit += betAmount
+            profit += bet
         }
+        result = 'win'
     }
 
     profitElement.innerHTML = `Profit: ${profit}`
@@ -91,25 +101,23 @@ const afterSpin = (color) => {
 
 //trigered when decides to roll
 const roll = () => {
+    console.log(canTurn, betAmount, chosenColor)
     if (!canTurn || !betAmount || !chosenColor) {
+        console.log('tried')
         return
     }
     let color = rollLogic()
-    setTimeout(afterSpin, 2000, color)
+    setTimeout(afterSpin, 2000, color, betAmount)
+    
 }
 
 
 
 
-
-
-
-
-
-
-
-
 rollButton.onclick = roll;
+
+
+/*/
 
 
 document.getElementById('redButton').onclick = () => {
@@ -125,13 +133,60 @@ document.getElementById('greenButton').onclick = () => {
     betAmountInput.style.backgroundColor = 'green'
 }
 
-
+/*/
 
 
 
 ///////////////////////////////////       automatic     /////////////////////////
 
-automaticChosenColor = 'red'
+automaticChosenColor = ''
+
+miseInitialeElement = document.getElementById('miseInitialeValeur')
+nbrtoursElement = document.getElementById('nbrtoursValeur')
+
+
+
+const automaticRoll = () => {
+    miseInitiale= parseInt(miseInitialeElement.value)
+    nbrtours= parseInt(nbrtoursElement.value)
+
+    if(!automaticChosenColor || !miseInitiale || !nbrtours){
+        return
+    }
+
+
+    setChosenColor(automaticChosenColor)
+    changeBetAmount(miseInitiale)
+
+    let i = 0
+    rollIfPossible()
+
+    function rollIfPossible(){
+        if(result=='win'){
+            i++
+            result=''
+            changeBetAmount(miseInitiale)
+        }
+        if (canTurn && i<nbrtours) {
+            roll()
+            rollIfPossible()
+            setTimeout(timesTwoBetAmount, 1500, betAmount)
+        }
+        else if (i<nbrtours){
+            setTimeout(rollIfPossible, 2500)  
+        }
+        else {
+            return
+        }
+
+    }
+}
+
+
+
+
+
+document.getElementById('goAuto').onclick = automaticRoll
 
 
 
