@@ -216,6 +216,16 @@ input[type=number] {
     width: 100px;
 }
 
+#chooseRed{
+    background-color:whitesmoke;
+    border: solid black 1px;
+}
+
+#chooseBlack{
+    background-color:whitesmoke;
+    border: solid black 1px;
+}
+
 #nbrtours input {
     width: 95px;
 }

@@ -124,3 +124,27 @@ document.getElementById('greenButton').onclick = () => {
     chosenColor='green';
     betAmountInput.style.backgroundColor = 'green'
 }
+
+
+
+
+
+///////////////////////////////////       automatic     /////////////////////////
+
+automaticChosenColor = 'red'
+
+
+
+document.getElementById('chooseRed').onclick = () => {
+    automaticChosenColor = 'red'
+    document.getElementById('chooseRed').style.backgroundColor = 'red'
+    document.getElementById('chooseBlack').style.backgroundColor = 'whitesmoke'
+    document.getElementById('chooseBlack').style.color = 'black'
+}
+
+document.getElementById('chooseBlack').onclick = () => {
+    automaticChosenColor = 'black'
+    document.getElementById('chooseRed').style.backgroundColor = 'whitesmoke'
+    document.getElementById('chooseBlack').style.color = 'white'
+    document.getElementById('chooseBlack').style.backgroundColor = 'black'
+}
