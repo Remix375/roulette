@@ -79,10 +79,13 @@ const rollLogic = () => {
 }
 
 
-const afterSpin = (color, bet) => {
+const afterSpin = (color, bet, auto) => {
     if (color !== chosenColor) {
         profit -= bet
         result = 'loss'
+        if (auto) {
+            timesTwoBetAmount(betAmount)
+        }
     }else {
         if (color === 'green') {
             profit += (bet * 11)
@@ -100,21 +103,20 @@ const afterSpin = (color, bet) => {
 
 
 //trigered when decides to roll
-const roll = () => {
+const roll = (auto) => {
     console.log(canTurn, betAmount, chosenColor)
     if (!canTurn || !betAmount || !chosenColor) {
         console.log('tried')
         return
     }
     let color = rollLogic()
-    setTimeout(afterSpin, 2000, color, betAmount)
-    
+    setTimeout(afterSpin, 2000, color, betAmount, auto) 
 }
 
 
 
 
-rollButton.onclick = roll;
+//rollButton.addEventListener("click", roll(false));
 
 
 /*/
@@ -168,14 +170,12 @@ const automaticRoll = () => {
             changeBetAmount(miseInitiale)
         }
         if (canTurn && i<nbrtours) {
-            roll()
+            roll(true)
             rollIfPossible()
-            setTimeout(timesTwoBetAmount, 1500, betAmount)
-        }
-        else if (i<nbrtours){
+            //setTimeout(timesTwoBetAmount, 2500, betAmount)
+        } else if (i<nbrtours){
             setTimeout(rollIfPossible, 2500)  
-        }
-        else {
+        } else {
             return
         }
 
