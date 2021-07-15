@@ -21,12 +21,19 @@ body {
 
 #lienVersChaine {
     text-decoration: none;
-    color: black;
+    color: rgb(238, 63, 63);
+    text-shadow: 1px 1px black;
     font-weight: bold;
     font-size: 35px;
+    border: 2px solid black;
+    padding: 0.5rem;
+    border-radius: 15%;
+    background-color: aquamarine;
+
 }
 
 #divlienVersChaine {
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
