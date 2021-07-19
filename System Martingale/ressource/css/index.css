@@ -109,7 +109,8 @@ body {
     border-radius: 10px;
     display: inline-block;
     background-color: black;
-    color: white
+    color: white;
+    cursor: pointer;
 }
 
 #betAmount {
@@ -264,4 +265,6 @@ input[type=number] {
     margin-right: 10px;
 }
 
-
+#goAuto {
+    cursor: pointer;
+}
