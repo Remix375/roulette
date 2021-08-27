@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./ressource/css/index.css">
+    <title>Calculator</title>
+</head>
+<body>
+
+    <h2 id="valeurArgent">argent:</h2>
+    <input type="number" value="1" class="numbers">
+    <input type="range" min="1" max="100" class="rangebar" id="choixArgent" oninput="changeArgent()"/>
+    <input type="number" class="numbers">
+
+
+    <h2 id="valeurMise">mise initiale:</h2>
+    <input type="number" class="numbers">
+    <input type="range" min="1" max="100" class="rangebar" id="choixMise" oninput="changeMise()"/>
+    <input type="number" class="numbers">
+
+    
+</body>
+
+<script src="./ressource/js/logic.js"></script>
+</html>
