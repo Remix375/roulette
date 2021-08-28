@@ -9,18 +9,20 @@
 </head>
 <body>
 
-    <h2 id="valeurArgent">argent:</h2>
+    <h2 id="valeurArgent">argent: 51</h2>
     <input type="number" value = "1" class="numbers" id="minArgent" onchange="onRangeModification()">
-    <input type="range" min="1" max="100" class="rangebar" id="choixArgent" oninput="changeArgent()"/>
+    <input type="range" min="1" max="100" class="rangebar" id="choixArgent" oninput="changeArgentMise()"/>
     <input type="number" value="100" class="numbers" id="maxArgent" onchange="onRangeModification()">
 
 
-    <h2 id="valeurMise">mise initiale:</h2>
+    <h2 id="valeurMise">mise initiale: 51</h2>
     <input type="number" value="1" class="numbers" id="minMise" onchange="onRangeModification()">
-    <input type="range" min="1" max="100" class="rangebar" id="choixMise" oninput="changeMise()"/>
+    <input type="range" min="1" max="100" class="rangebar" id="choixMise" oninput="changeArgentMise()"/>
     <input type="number" value="100" class="numbers" id="maxMise" onchange="onRangeModification()">
 
-    
+    <h3 id="nbrPertes">Nombre de pertes a la suite pour tout perdre: </h3>
+    <h3 id="argentPerdu">Argent perdu: </h3>
+    <h3 id="proba">Probabilité que ça arrive: </h3>
 </body>
 
 <script src="./ressource/js/logic.js"></script>

@@ -4,6 +4,10 @@ body {
     background-color: bisque;
 }
 
+h3 {
+    font-size: 2rem;
+    margin: 5rem;
+}
 
 .numbers {
     width: 2rem;
