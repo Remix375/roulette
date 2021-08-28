@@ -16,3 +16,17 @@ const changeMise = () => {
 
     valeurMise.innerHTML = `mise initiale: ${choixMise.value}`
 }
+
+
+const onRangeModification = () => {
+    const choixArg = document.getElementById("choixArgent");
+    const choixMise = document.getElementById("choixMise");
+    
+    
+    choixArg.setAttribute("min", document.getElementById("minArgent").value);
+    choixArg.setAttribute("max", document.getElementById("maxArgent").value);
+
+    choixMise.setAttribute("min", document.getElementById("minMise").value);
+    choixMise.setAttribute("max", document.getElementById("maxMise").value);
+
+}
