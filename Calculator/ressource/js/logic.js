@@ -36,13 +36,16 @@ const recalcule = (argent, mise) => {
     const nbrPertes = document.getElementById("nbrPertes");
     const proba = document.getElementById("proba");
     const argentPerdu = document.getElementById("argentPerdu");
+    const retour = document.getElementById("retour");
 
     const nbrPertesSuite = Math.floor(getBaseLog(2, argent/mise+1))
 
     nbrPertes.innerHTML = `Nombre de pertes a la suite pour tout perdre: ${nbrPertesSuite}`;
-    argentPerdu.innerHTML = `Argent perdusi ça arrive: ${-mise * ((1-2**nbrPertesSuite)/-1)}`
-    proba.innerHTML = `Probabilité que ça arrive: ${((19/37) ** nbrPertesSuite) * 100}%`
-}
+    argentPerdu.innerHTML = `Argent perdu si ça arrive: ${-mise * ((1-2**nbrPertesSuite)/-1)}`;
+    proba.innerHTML = `Probabilité que ça arrive: ${((19/37) ** nbrPertesSuite) * 100}%`;
+    retour.innerHTML = `Taux de retour: ${(((mise*((1 - 2 ** nbrPertesSuite) / -1) + mise) * (1 - (19/37) ** nbrPertesSuite)) / (mise * ((1 - 2 ** nbrPertesSuite) / -1)))*100}%`;
+    console.log((1 - (19/37) ** nbrPertesSuite))
+} 
 
 
 const getBaseLog = (x, y) => {
