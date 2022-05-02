@@ -43,7 +43,7 @@ const recalcule = (argent, mise) => {
     nbrPertes.innerHTML = `Nombre de pertes a la suite pour tout perdre: ${nbrPertesSuite}`;
     argentPerdu.innerHTML = `Argent perdu si ça arrive: ${-mise * ((1-2**nbrPertesSuite)/-1)}`;
     proba.innerHTML = `Probabilité que ça arrive: ${((19/37) ** nbrPertesSuite) * 100}%`;
-    retour.innerHTML = `Taux de retour: ${(((mise*((1 - 2 ** nbrPertesSuite) / -1) + mise) * (1 - (19/37) ** nbrPertesSuite)) / (mise * ((1 - 2 ** nbrPertesSuite) / -1)))*100}%`;
+    retour.innerHTML = `Taux de retour: ${Math.round((mise*(1 - (38/37)** nbrPertesSuite)*100)) / 100} euros`;
     console.log((1 - (19/37) ** nbrPertesSuite))
 } 
 
